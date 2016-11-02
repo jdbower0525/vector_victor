@@ -52,7 +52,7 @@ def mean(*args):
     return sum(*args)/len(*args)
 
 def vector_mean(*args):
-    return [mean(x) for x in zip(*args)]
+    return [(sum(x)/len(args)) for x in zip(*args)]
 
 def magnitude(vector):
     return ((sum([x**2 for x in vector])))**(1/2)
