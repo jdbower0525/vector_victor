@@ -148,38 +148,38 @@ def test_shape_matrices():
     assert shape(D) == (2, 3)
 
 
-# def test_matrix_row():
-#     """
-#            0 1  <- rows
-#        0 [[a b]]
-#        1 [[c d]]
-#        ^
-#      columns
-#     """
-#     assert matrix_row(A, 0) == [1, 0, 0]
-#     assert matrix_row(B, 1) == [4, 5, 6]
-#     assert matrix_row(C, 2) == [1, 2]
-#
-#
-# def test_matrix_col():
-#     """
-#            0 1  <- rows
-#        0 [[a b]]
-#        1 [[c d]]
-#        ^
-#      columns
-#     """
-#     assert matrix_col(A, 0) == [1, 0, 0]
-#     assert matrix_col(B, 1) == [2, 5, 8]
-#     assert matrix_col(D, 2) == [3, 1]
-#
-#
-# def test_matrix_matrix_add():
-#     assert matrix_add(A, B) == [[2, 2, 3],
-#                                 [4, 6, 6],
-#                                 [7, 8, 10]]
-#
-#
+def test_matrix_row():
+    """
+           0 1  <- rows
+       0 [[a b]]
+       1 [[c d]]
+       ^
+     columns
+    """
+    assert matrix_row(A, 0) == [1, 0, 0]
+    assert matrix_row(B, 1) == [4, 5, 6]
+    assert matrix_row(C, 2) == [1, 2]
+
+
+def test_matrix_col():
+    """
+           0 1  <- rows
+       0 [[a b]]
+       1 [[c d]]
+       ^
+     columns
+    """
+    assert matrix_col(A, 0) == [1, 0, 0]
+    assert matrix_col(B, 1) == [2, 5, 8]
+    assert matrix_col(D, 2) == [3, 1]
+
+
+def test_matrix_add():
+    assert matrix_add(A, B) == [[2, 2, 3],
+                                [4, 6, 6],
+                                [7, 8, 10]]
+
+
 # @raises(ShapeError)
 # def test_matrix_add_checks_shapes():
 #     """Shape rule: the rows and columns of the matrices must be the same size."""
