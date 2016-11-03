@@ -56,4 +56,30 @@ def matrix_row(matrix, row):
 def matrix_col(matrix, col):
     return [row[col] for row in matrix]
 
-def matrix_add(matrix_1, matrix_2)
+def matrix_add(matrix1, matrix2):
+    if shape(matrix1) == shape(matrix2):
+        return [[matrix1[i][j] + matrix2[i][j]  for j in range(len(matrix1[0]))] for i in range(len(matrix1))]
+    else:
+        raise ShapeError
+
+def matrix_matrix_sub(matrix1, matrix2):
+    if shape(matrix1) == shape(matrix2):
+        return [[matrix1[i][j] - matrix2[i][j] for j in range(len(matrix1[0]))] for i in range(len(matrix1))]
+    else:
+        raise ShapeError
+
+def matrix_scalar_multiply(matrix1, scalar):
+    result = [[matrix1[i][j]*scalar for j in range(len(matrix1[0]))] for i in range(len(matrix1))]
+    return result
+
+def matrix_vector_multiply(matrix1, vector):
+    if len(vector) == len(matrix1[0]):
+        return [dot(x, vector) for x in matrix1]
+    else:
+        raise ShapeError
+
+def matrix_multiply(matrix1, matrix2):
+    if len(matrix1[0]) == len(matrix2):
+        return [[sum(a*b for a,b in zip(matrix1_row,matrix2_col)) for matrix2_col in zip(*matrix2)] for matrix1_row in matrix1]
+    else:
+        raise ShapeError
